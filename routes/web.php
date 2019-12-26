@@ -11,9 +11,15 @@
 |
 */
 
+
+
 Route::get('/', function () {
+
     return view('welcome');
+
 });
-
-
-Route::resource(['type'=>'TypeEquController']);
+Route::resource('tipo', 'TypeEquController');
+Route::resource('tecnico', 'TechnicalController');
+Route::resource('colaborador', 'CollaboratorController');
+Route::resource('equipo', 'EquipmentController');
+Route::resource('mantenimiento', 'MaintenanceController');
