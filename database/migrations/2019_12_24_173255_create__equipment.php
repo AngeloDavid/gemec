@@ -23,7 +23,7 @@ class CreateEquipment extends Migration
             $table->decimal('DISK', 8, 2);
             $table->string('ano',5);
             $table->string('color',50);
-            $table->string('SO',50);            
+            $table->string('SO',50);
             $table->enum('status', ['OK','DESACTUALIZADO','EN_REPARACION','DAÑADO' ,'DEBAJA']);
             $table->timestamps();
         });

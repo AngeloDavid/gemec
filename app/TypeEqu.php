@@ -9,7 +9,7 @@ class TypeEqu extends Model
     //
     public $table="TypeEqu";
     protected $fillable =[
-        'name'
+        'name','status'
     ] ;
 
 }

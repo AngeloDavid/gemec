@@ -27,7 +27,7 @@ class AddForeignKeyEquipColla extends Migration
     public function down()
     {
         Schema::table('_equipment', function (Blueprint $table) {
-            $table->dropColumn('id_colla');            
+            $table->dropColumn('id_colla');
         });
     }
 }
