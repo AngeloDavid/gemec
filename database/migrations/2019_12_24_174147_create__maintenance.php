@@ -18,7 +18,7 @@ class CreateMaintenance extends Migration
             $table->date('date');
             $table->enum('type', ['PREVENTIVO','CORRECTIVO','INSTALACION','CONFIGURACION','DIAGNOSTICO']);
             $table->string('description',300);
-            $table->enum('estado',['TERMINADO','EN PROCESO','POR_EMPEZAR']);
+            $table->enum('status',['TERMINADO','EN PROCESO','POR_EMPEZAR']);
             $table->string('cause',100);
             $table->string('defect',100);
             $table->string('treatment',100);
