@@ -16,9 +16,9 @@ class CreateMaintenance extends Migration
         Schema::create('_maintenance', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->date('date');
-            $table->string('type',100);
+            $table->enum('type', ['PREVENTIVO','CORRECTIVO','INSTALACION','CONFIGURACION','DIAGNOSTICO']);
             $table->string('description',300);
-            $table->string('estado',100);
+            $table->enum('estado',['TERMINADO','EN PROCESO','POR_EMPEZAR']);
             $table->string('cause',100);
             $table->string('defect',100);
             $table->string('treatment',100);

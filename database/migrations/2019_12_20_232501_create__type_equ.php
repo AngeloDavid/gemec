@@ -16,6 +16,7 @@ class CreateTypeEqu extends Migration
         Schema::create('_type_equ', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name',100);
+            $table->boolean('status');
             $table->timestamps();
         });
     }

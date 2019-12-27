@@ -18,6 +18,7 @@ class CreateCollaborator extends Migration
             $table->string('name',100);
             $table->string('cargo',100);
             $table->string('area',100);
+            $table->boolean('status');
             $table->timestamps();
         });
     }

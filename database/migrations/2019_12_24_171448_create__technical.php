@@ -19,6 +19,7 @@ class CreateTechnical extends Migration
             $table->string('password');
             $table->string('name',100);
             $table->char('rol',10);
+            $table->boolean('status');
             $table->timestamps();
         });
     }
