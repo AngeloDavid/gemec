@@ -12,3 +12,4 @@ class Maintenance extends Model
         'date', 'type', 'description','status','cause','defect','treatment','id_tecn','id_equi'
     ];
 }
+

@@ -14,8 +14,10 @@ class TypeEquController extends Controller
      */
     public function index()
     {
-        //
+        return view('tipo.new',compact('title'));
+
     }
+
 
     /**
      * Show the form for creating a new resource.
