@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use App\TypeEqu;
 use Illuminate\Http\Request;
 
+
 class TypeEquController extends Controller
 {
+    protected $title = 'Tipo de Equipo';
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +17,11 @@ class TypeEquController extends Controller
      */
     public function index()
     {
-        //
+        $title = $this->title;
+        $list = TypeEqu::all();
+
+        $ruta = [['Inicio','/','fa fa-home'],['TipoEquipo','tipo','fa fa-th-large']];
+        return view('tipo.index', compact('title','ruta','list'));
     }
 
     /**
@@ -25,6 +32,12 @@ class TypeEquController extends Controller
     public function create()
     {
         //
+        $title = $this->title;
+        $ruta = [['Inicio','/','fa fa-home'],['TipoEquipo','tipo','fa fa-th-large']];
+        $isnew = true;
+        $urlForm = 'tipo';
+        $tipo = new TypeEqu ();
+        return view('tipo.new',compact('title','ruta','isnew','urlForm','tipo'));
     }
 
     /**
@@ -36,6 +49,11 @@ class TypeEquController extends Controller
     public function store(Request $request)
     {
         //
+        $data = request()->all();
+
+        TypeEqu::create(['name'=>$data['name'],'status'=> $data['status']]);
+        return redirect()->route('tipo.index');
+
     }
 
     /**
