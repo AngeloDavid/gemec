@@ -17,12 +17,15 @@ class TypeEquController extends Controller
      */
     public function index()
     {
+
         $title = $this->title;
         $list = TypeEqu::all();
 
         $ruta = [['Inicio','/','fa fa-home'],['TipoEquipo','tipo','fa fa-th-large']];
         return view('tipo.index', compact('title','ruta','list'));
+
     }
+
 
     /**
      * Show the form for creating a new resource.

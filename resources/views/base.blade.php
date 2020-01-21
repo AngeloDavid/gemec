@@ -32,6 +32,7 @@
   <link href="{{asset('css/style-responsive.css')}}" rel="stylesheet" />
   <link href="{{asset('css/xcharts.min.css')}}" rel=" stylesheet">
   <link href="{{asset('css/jquery-ui-1.10.4.min.css')}}" rel="stylesheet">
+
   <!-- =======================================================
     Theme Name: NiceAdmin
     Theme URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
@@ -409,13 +410,14 @@
         </div>
 
         @yield('principal')
-      </section>
+
     </section>
     <!--main content end-->
   </section>
   <!-- container section start -->
 
   <!-- javascripts -->
+<<<<<<< HEAD
   <script src="{{asset('js/jquery.js')}}"></script>
   <script src="{{asset('js/jquery-ui-1.10.4.min.js')}}"></script>
   <script src="{{asset('js/jquery-1.8.3.min.js')}}"></script>
@@ -464,8 +466,6 @@
           }
         })
       });
-
-
 
       //custom select box
 
