@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class TypeEquController extends Controller
 {
-    protected $title = 'Tipo de Equipo';
+    protected $title = ['Tipo de Equipo','fa fa-laptop'];
 
     /**
      * Display a listing of the resource.
@@ -19,9 +19,10 @@ class TypeEquController extends Controller
     {
 
         $title = $this->title;
-        $list = TypeEqu::all();
 
+        $list = TypeEqu::all();
         $ruta = [['Inicio','/','fa fa-home'],['TipoEquipo','tipo','fa fa-th-large']];
+
         return view('tipo.index', compact('title','ruta','list'));
 
     }
@@ -36,7 +37,7 @@ class TypeEquController extends Controller
     {
         //
         $title = $this->title;
-        $ruta = [['Inicio','/','fa fa-home'],['TipoEquipo','tipo','fa fa-th-large']];
+        $ruta = [['Inicio','/','fa fa-home'],['TipoEquipo','tipo','fa fa-th-large'],['Nuevo','tipo/create','']];
         $isnew = true;
         $urlForm = 'tipo';
         $tipo = new TypeEqu ();
@@ -54,7 +55,7 @@ class TypeEquController extends Controller
         //
         $data = request()->all();
 
-        TypeEqu::create(['name'=>$data['name'],'status'=> $data['status']]);
+        TypeEqu::create(['name'=>$data['name'],'status'=> '1']);
         return redirect()->route('tipo.index');
 
     }
@@ -76,9 +77,17 @@ class TypeEquController extends Controller
      * @param  \App\TypeEqu  $typeEqu
      * @return \Illuminate\Http\Response
      */
-    public function edit(TypeEqu $typeEqu)
+    public function edit($id)
     {
-        //
+        $tipo = TypeEqu::find($id);
+        $title = $this->title;
+        $ruta = [['Inicio','/','fa fa-home'],['TipoEquipo','tipo','fa fa-th-large'],['Editar','tipo','']];
+        $isnew = false;
+        $urlForm = 'tipo/'.$id;
+        if($tipo == null)
+            return redirect()->route('tipo.index');
+        else
+            return view('tipo.new',compact('title','ruta','isnew','urlForm','tipo'));
     }
 
     /**
@@ -88,9 +97,14 @@ class TypeEquController extends Controller
      * @param  \App\TypeEqu  $typeEqu
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, TypeEqu $typeEqu)
+    public function update($id)
     {
-        //
+        $data = request()->all();
+        $tipo = TypeEqu::find($id);
+        $tipo->update($data);
+        $tipo->status = isset( $data['status'])?true:false;
+        $tipo->save();
+        return redirect()->route('tipo.index');
     }
 
     /**

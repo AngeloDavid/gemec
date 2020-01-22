@@ -9,7 +9,7 @@
   <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
   <link rel="shortcut icon" href="img/favicon.png">
 
-<title>GEMEC - {{ $title }}</title>
+<title>GEMEC - {{ $title[0] }}</title>
 
   <!-- Bootstrap CSS -->
   <link href="{{asset('css/bootstrap.min.css" rel="stylesheet')}}">
@@ -316,13 +316,13 @@
           <li class="active">
             <a class="" href="index.html">
                           <i class="icon_house_alt"></i>
-                          <span>Dashboard</span>
+                          <span>Inicio</span>
                       </a>
           </li>
           <li class="sub-menu">
             <a href="javascript:;" class="">
-                          <i class="icon_document_alt"></i>
-                          <span>Forms</span>
+                          <i class="fa fa-laptop"></i>
+                          <span>Tipos</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
             <ul class="sub">
@@ -395,7 +395,7 @@
         <!--overview start-->
         <div class="row">
           <div class="col-lg-12">
-            <h3 class="page-header"><i class="fa fa-laptop"></i> {{$title}}</h3>
+            <h3 class="page-header"><i class="{{$title['1']}}"></i> {{$title['0']}}</h3>
             <ol class="breadcrumb">
                 @foreach ($ruta as $item)
                     @if ($loop->last)

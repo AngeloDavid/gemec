@@ -26,7 +26,12 @@
                 @else
                     <span class="label label-danger">Inactivo</span>
                 @endif</td>
-                <td></td>
+                <td>
+                    <div class="btn-group">
+                    <a href="{{ url('tipo/'.$item->id.'/edit')}}" class="btn btn-info">Editar</a>
+                        <a  class="btn btn-danger">Eliminar</a>
+                      </div>
+                </td>
               </tr>
               @empty
               <tr>
