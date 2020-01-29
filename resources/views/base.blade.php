@@ -333,7 +333,7 @@
           <li class="sub-menu">
             <a href="javascript:;" class="">
                           <i class="icon_desktop"></i>
-                          <span>UI Fitures</span>
+                          <span>Equipos</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
             <ul class="sub">
@@ -345,13 +345,13 @@
           <li>
             <a class="" href="widgets.html">
                           <i class="icon_genius"></i>
-                          <span>Widgets</span>
+                          <span>Tecnico</span>
                       </a>
           </li>
           <li>
             <a class="" href="chart-chartjs.html">
-                          <i class="icon_piechart"></i>
-                          <span>Charts</span>
+                          <i class="icon_documents_alt"></i>
+                          <span>Colaborador</span>
 
                       </a>
 
@@ -359,7 +359,7 @@
 
           <li class="sub-menu">
             <a href="javascript:;" class="">
-                          <i class="icon_table"></i>
+                          <i class="icon_genius"></i>
                           <span>Tables</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
