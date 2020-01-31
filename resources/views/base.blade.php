@@ -345,13 +345,13 @@
           <li>
             <a class="" href="widgets.html">
                           <i class="icon_genius"></i>
-                          <span>Widgets</span>
+                          <span>Tecnico</span>
                       </a>
           </li>
           <li>
             <a class="" href="chart-chartjs.html">
-                          <i class="icon_piechart"></i>
-                          <span>Charts</span>
+                          <i class="icon_documents_alt"></i>
+                          <span>Colaborador</span>
 
                       </a>
 
@@ -359,7 +359,7 @@
 
           <li class="sub-menu">
             <a href="javascript:;" class="">
-                          <i class="icon_table"></i>
+                          <i class="icon_genius"></i>
                           <span>Tables</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
@@ -417,7 +417,6 @@
   <!-- container section start -->
 
   <!-- javascripts -->
-<<<<<<< HEAD
   <script src="{{asset('js/jquery.js')}}"></script>
   <script src="{{asset('js/jquery-ui-1.10.4.min.js')}}"></script>
   <script src="{{asset('js/jquery-1.8.3.min.js')}}"></script>
