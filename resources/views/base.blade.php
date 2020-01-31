@@ -52,7 +52,7 @@
       </div>
 
       <!--logo start-->
-      <a href="index.html" class="logo">Nice <span class="lite">Admin</span></a>
+      <a href="index.html" class="logo">GEMEC <span class="lite">SYS</span></a>
       <!--logo end-->
 
       <div class="nav search-row" id="top_menu">
@@ -70,6 +70,7 @@
       <div class="top-nav notification-row">
         <!-- notificatoin dropdown start-->
         <ul class="nav pull-right top-menu">
+
 
           <!-- task notificatoin start -->
           <li id="task_notificatoin_bar" class="dropdown">
@@ -321,25 +322,24 @@
           </li>
           <li class="sub-menu">
             <a href="javascript:;" class="">
-                          <i class="fa fa-laptop"></i>
+                          <i class="fa fa-th-large"></i>
                           <span>Tipos</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
             <ul class="sub">
-              <li><a class="" href="form_component.html">Form Elements</a></li>
-              <li><a class="" href="form_validation.html">Form Validation</a></li>
+              <li><a class="" href="{{url('tipo')}}">Lista</a></li>
+              <li><a class="" href="{{url('tipo/create')}}"><i class="icon_plus"></i> Nuevo</a></li>
             </ul>
           </li>
           <li class="sub-menu">
             <a href="javascript:;" class="">
                           <i class="icon_desktop"></i>
-                          <span>UI Fitures</span>
+                          <span>Equipo</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
             <ul class="sub">
-              <li><a class="" href="general.html">Elements</a></li>
-              <li><a class="" href="buttons.html">Buttons</a></li>
-              <li><a class="" href="grids.html">Grids</a></li>
+              <li><a class="" href="{{url('equipo')}}" >Lista</a></li>
+              <li><a class="" href="{{url('equipo/create')}}"><i class="icon_plus"></i> Nuevo</a></a></li>
             </ul>
           </li>
           <li>

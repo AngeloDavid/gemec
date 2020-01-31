@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class TypeEquController extends Controller
 {
-    protected $title = ['Tipo de Equipo','fa fa-laptop'];
+    protected $title = ['Tipo de Equipo','fa fa-th-large'];
 
     /**
      * Display a listing of the resource.

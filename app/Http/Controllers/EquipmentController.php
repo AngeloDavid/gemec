@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Equipment;
+use App\TypeEqu;
 use Illuminate\Http\Request;
 
 class EquipmentController extends Controller
 {
+    protected $title = ['Equipo','fa fa-laptop'];
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +16,12 @@ class EquipmentController extends Controller
      */
     public function index()
     {
-        //
+        $title = $this->title;
+
+        $list = Equipment::all();
+        $ruta = [['Inicio','/','fa fa-home'],['Equipo','equipo','fa fa-laptop']];
+
+        return view('equipo.index', compact('title','ruta','list'));
     }
 
     /**
@@ -24,8 +31,15 @@ class EquipmentController extends Controller
      */
     public function create()
     {
-        //
+        $title = $this->title;
+        $ruta = [['Inicio','/','fa fa-home'],['Equipo','equipo','fa fa-laptop'],['Nuevo','equipo/create','']];
+        $isnew = true;
+        $urlForm = 'equipo';
+        $item = new Equipment ();
+        $listType = TypeEqu::all();
+        return view('equipo.new',compact('title','ruta','isnew','urlForm','item','listType'));
     }
+
 
     /**
      * Store a newly created resource in storage.
