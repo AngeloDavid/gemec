@@ -10,6 +10,6 @@ class Equipment extends Model
     public $table = "_equipment";
     protected $fillable = [
         'marca', 'serie', 'description','CPU','RAM','DISK','ano','color',
-        'SO','status','id_type','id_colla'
+        'SO','status','id_type','id_colla','codaaf','mac','ip'
     ];
 }

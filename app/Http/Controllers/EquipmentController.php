@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Equipment;
 use App\TypeEqu;
+use App\Collaborator;
 use Illuminate\Http\Request;
 
 class EquipmentController extends Controller
@@ -37,7 +38,8 @@ class EquipmentController extends Controller
         $urlForm = 'equipo';
         $item = new Equipment ();
         $listType = TypeEqu::all();
-        return view('equipo.new',compact('title','ruta','isnew','urlForm','item','listType'));
+        $listCol = Collaborator::all();
+        return view('equipo.new',compact('title','ruta','isnew','urlForm','item','listType','listCol'));
     }
 
 
@@ -49,7 +51,9 @@ class EquipmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = request()->all();
+        Equipment::create($data);
+        return redirect()->route('equipo.index');
     }
 
     /**

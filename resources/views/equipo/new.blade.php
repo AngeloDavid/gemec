@@ -13,17 +13,23 @@
                     {{ method_field('PUT') }}
                  @endif
             <div class="row">
-                <div class="col-lg-4">
+                <div class="col-lg-2">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Tipo</label>
-                        <select class="form-control m-bot15">
+                        <select name="id_type" class="form-control m-bot15">
                             @foreach ($listType as $item)
                                 <option value="{{$item->id}}" >{{$item->name}}</option>
                             @endforeach
                         </select>
                     </div>
                 </div>
-                <div class="col-lg-8">
+                <div class="col-lg-4">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">CODIGO AF</label>
+                        <input type="text" class="form-control" id="codeaf" name="codeaf" value="{{old('codeaf',$item->codeaf)}}" placeholder="">
+                    </div>
+                </div>
+                <div class="col-lg-6">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Descripcion</label>
                         <input type="text" class="form-control" id="description" name="description" value="{{old('description',$item->description)}}" placeholder="">
@@ -60,7 +66,7 @@
                 <div class="col-lg-3">
                     <div class="form-group">
                         <label for="exampleInputEmail1">CPU</label>
-                        <select multiple="" class="form-control">
+                        <select name="CPU" multiple="" class="form-control">
                             <option>CORE I7</option>
                             <option>CORE I5</option>
                             <option>CORE I3</option>
@@ -72,21 +78,21 @@
                   <div class="col-lg-3">
                     <div class="form-group">
                         <label for="exampleInputEmail1">RAM</label>
-                        <select multiple="" class="form-control">
-                            <option>16GB</option>
-                            <option>12GB</option>
-                            <option>8GB</option>
-                            <option>4GB</option>
-                            <option>2GB</option>
-                            <option>1GB</option>
-                            <option>512MB</option>
+                        <select name="RAM" multiple="" class="form-control">
+                            <option value="16">16GB</option>
+                            <option value="12">12GB</option>
+                            <option value="8">8GB</option>
+                            <option value="4">4GB</option>
+                            <option value="2">2GB</option>
+                            <option value="1" >1GB</option>
+                            <option value="0.5" >512MB</option>
                         </select>
                       </div>
                   </div>
                   <div class="col-lg-3">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Sistema Operativo</label>
-                        <select multiple="" class="form-control">
+                        <select name="SO" multiple="" class="form-control">
                             <option>Windows 10</option>
                             <option>Windows 7</option>
                             <option>Windows xp</option>
@@ -98,21 +104,36 @@
                   </div>
                   <div class="col-lg-3">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Disco Duro</label>
-                        <input type="text" class="form-control" id="DISK" name="DISK" value="{{old('DISK',$item->DISK)}}" placeholder="">
+                        <label for="exampleInputEmail1">Disco Duro (GB)</label>
+                        <input type="number" class="form-control" id="DISK" name="DISK" value="{{old('DISK',$item->DISK)}}" placeholder="">
                       </div>
                   </div>
               </div>
+              <h4>Datos de RED</h4>
+              <hr>
+              <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">IP</label>
+                        <input type="text" class="form-control" id="ip" name="ip" value="{{old('marca',$item->marca)}}" placeholder="">
+                      </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">MAC</label>
+                        <input type="text" class="form-control" id="mac" name="mac" value="{{old('marca',$item->marca)}}" placeholder="">
+                      </div>
+                </div>
+              </div>
+              <hr>
               <div class="row">
                 <div class="col-lg-12">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Colaborador</label>
-                        <select class="form-control m-bot15">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                        <select name="id_colla" class="form-control m-bot15">
+                            @foreach ($listCol as $item)
+                                <option value="{{$item->id}}">{{$item->name}}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>

@@ -18,13 +18,13 @@ class CreateEquipment extends Migration
             $table->string('marca',100);
             $table->string('serie',100);
             $table->string('description',100);
-            $table->decimal('CPU', 8, 2);
-            $table->decimal('RAM', 8, 2);
-            $table->decimal('DISK', 8, 2);
-            $table->string('ano',5);
-            $table->string('color',50);
-            $table->string('SO',50);
-            $table->enum('status', ['OK','DESACTUALIZADO','EN_REPARACION','DAÑADO' ,'DEBAJA']);
+            $table->string('CPU')->nullable();
+            $table->decimal('RAM', 8, 2)->nullable();
+            $table->decimal('DISK', 8, 2)->nullable();
+            $table->string('ano',5)->nullable();
+            $table->string('color',50)->nullable();
+            $table->string('SO',50)->nullable();
+            $table->enum('status', ['OK','DESACTUALIZADO','EN_REPARACION','DAÑADO' ,'DEBAJA'])->default('OK');
             $table->timestamps();
         });
     }

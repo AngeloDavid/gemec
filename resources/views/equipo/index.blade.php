@@ -23,6 +23,7 @@
               @forelse ($list as $item)
               <tr>
                 <td> {{$loop->index +1 }}</td>
+                <td> {{$item->idtype }}</td>
                 <td> {{$item->marca }}</td>
                 <td>{{$item->serie}}</td>
                 <td>{{$item->description}}</td>
@@ -36,11 +37,27 @@
                         <li> SO: {{$item->SO}}</li>
                     </ul>
                 </td>
-                <td> @if ($item->status == '1')
-                    <span class="label label-success">Activo</span>
-                @else
-                    <span class="label label-danger">Inactivo</span>
-                @endif</td>
+                <td>
+                    @switch($item->status)
+                        @case('OK')
+                            <span class="label label-success">
+                            @break
+                        @case('DESACTUALIZADO')
+                            <span class="label label-warning">
+                            @break
+                        @case('EN_REPARACION')
+                            <span class="label label-warning">
+                            @break
+                        @case('DAÑADO')
+                            <span class="label label-danger">
+                            @break
+                        @case('DEBAJA')
+                            <span class="label label-info">
+                            @break
+                        @default
+
+                    @endswitch
+                    {{$item->status}}</span>
                 <td>
                     <div class="btn-group">
                     <a href="{{ url('tipo/'.$item->id.'/edit')}}" class="btn btn-info">Editar</a>

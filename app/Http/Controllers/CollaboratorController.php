@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class CollaboratorController extends Controller
 {
+    protected $title = ['Colaborador','fa fa-user'];
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +15,12 @@ class CollaboratorController extends Controller
      */
     public function index()
     {
-        //
+        $title = $this->title;
+
+        $list = Collaborator::all();
+        $ruta = [['Inicio','/','fa fa-home'],['Colaborador','colaborador','fa fa-user']];
+
+        return view('colaborador.index', compact('title','ruta','list'));
     }
 
     /**
@@ -24,7 +30,12 @@ class CollaboratorController extends Controller
      */
     public function create()
     {
-        //
+        $title = $this->title;
+        $ruta = [['Inicio','/','fa fa-home'],['COLABORADOR','colaborador','fa fa-user'],['Nuevo','colaborador/create','']];
+        $isnew = true;
+        $urlForm = 'colaborador';
+        $item = new Collaborator ();
+        return view('colaborador.new',compact('title','ruta','isnew','urlForm','item'));
     }
 
     /**
@@ -35,7 +46,9 @@ class CollaboratorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = request()->all();
+        Collaborator::create(['name'=>$data['name'],'area'=>$data['area'],'cargo'=>$data['cargo'],'status'=> '1']);
+        return redirect()->route('colaborador.index');
     }
 
     /**
@@ -55,9 +68,17 @@ class CollaboratorController extends Controller
      * @param  \App\Collaborator  $collaborator
      * @return \Illuminate\Http\Response
      */
-    public function edit(Collaborator $collaborator)
+    public function edit($id)
     {
-        //
+        $item = Collaborator::find($id);
+        $title = $this->title;
+        $ruta = [['Inicio','/','fa fa-home'],['COLABORADOR','colaborador','fa fa-user'],['Editar','colaborador/create','']];
+        $isnew = false;
+        $urlForm = 'colaborador/'.$id;
+        if($item == null)
+            return redirect()->route('colaborador.index');
+        else
+            return view('colaborador.new',compact('title','ruta','isnew','urlForm','item'));
     }
 
     /**

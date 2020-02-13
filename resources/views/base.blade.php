@@ -348,12 +348,16 @@
                           <span>Tecnico</span>
                       </a>
           </li>
-          <li>
-            <a class="" href="chart-chartjs.html">
-                          <i class="icon_documents_alt"></i>
+          <li class="sub-menu">
+            <a class="" href="javascript:;">
+                          <i class="fa fa-user"></i>
                           <span>Colaborador</span>
-
+                          <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
+                      <ul class="sub">
+                        <li><a class="" href="{{url('colaborador')}}" >Lista</a></li>
+                        <li><a class="" href="{{url('colaborador/create')}}"><i class="icon_plus"></i> Nuevo</a></a></li>
+                      </ul>
 
           </li>
 
