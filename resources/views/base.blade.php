@@ -316,9 +316,11 @@
         <ul class="sidebar-menu">
           <li class="active">
             <a class="" href="index.html">
-                          <i class="icon_house_alt"></i>
-                          <span>Inicio</span>
-                      </a>
+
+                    <i class="icon_house_alt"></i>
+                    <span>Inicio</span>
+                    <span class="menu-arrow arrow_carrot-right"></span>
+            </a>
           </li>
           <li class="sub-menu">
             <a href="javascript:;" class="">
@@ -343,10 +345,16 @@
             </ul>
           </li>
           <li>
-            <a class="" href="widgets.html">
-                          <i class="icon_genius"></i>
-                          <span>Tecnico</span>
+            <li class="sub-menu">
+                <a class="" href="javascript:;">
+                              <i class="fa fa-user"></i>
+                              <span>Técnico</span>
+                              <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
+                      <ul class="sub">
+                        <li><a class="" href="{{url('tecnico')}}" >Lista</a></li>
+                        <li><a class="" href="{{url('tecnico/create')}}"><i class="icon_plus"></i> Nuevo</a></a></li>
+                      </ul>
           </li>
           <li class="sub-menu">
             <a class="" href="javascript:;">
@@ -363,19 +371,20 @@
 
           <li class="sub-menu">
             <a href="javascript:;" class="">
-                          <i class="icon_genius"></i>
-                          <span>Tables</span>
+                          <i class="fa fa-user"></i>
+                          <span>Mantenimiento</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-            <ul class="sub">
-              <li><a class="" href="basic_table.html">Basic Table</a></li>
-            </ul>
+                        </a>
+                          <ul class="sub">
+                            <li><a class="" href="{{url('mantenimiento')}}" >Lista</a></li>
+                            <li><a class="" href="{{url('mantenimiento/create')}}"><i class="icon_plus"></i> Nuevo</a></a></li>
+                          </ul>
           </li>
 
           <li class="sub-menu">
             <a href="javascript:;" class="">
                           <i class="icon_documents_alt"></i>
-                          <span>Pages</span>
+                          <span>Reportes</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
             <ul class="sub">

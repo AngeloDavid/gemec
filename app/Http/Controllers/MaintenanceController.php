@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Maintenance;
+use App\Equipment;
+Use App\Technical;
 use Illuminate\Http\Request;
 
 class MaintenanceController extends Controller
 {
+    protected $title = ['Mantenimiento','fa fa-laptop'];
     /**
      * Display a listing of the resource.
      *
@@ -15,6 +18,12 @@ class MaintenanceController extends Controller
     public function index()
     {
         //
+        $title = $this->title;
+
+        $list = Maintenance::all();
+        $ruta = [['Inicio','/','fa fa-home'],['Mantenimiento','mantenimiento','fa fa-laptop']];
+
+        return view('mantenimiento.index', compact('title','ruta','list'));
     }
 
     /**
@@ -25,6 +34,15 @@ class MaintenanceController extends Controller
     public function create()
     {
         //
+        $title = $this->title;
+        $ruta = [['Inicio','/','fa fa-home'],['Mantenimiento','mantenimiento','fa fa-laptop'],['Nuevo','mantenimiento/create','']];
+        $isnew = true;
+        $urlForm = 'mantenimiento';
+        $item = new Maintenance ();
+        $listEqui = Equipment::all();
+        $listTec = Technical::all();
+        return view('mantenimiento.new',compact('title','ruta','isnew','urlForm','item','listEqui','listTec'));
+
     }
 
     /**
@@ -36,6 +54,11 @@ class MaintenanceController extends Controller
     public function store(Request $request)
     {
         //
+        $data = request()->all();
+        dd($request->all());
+        Maintenance::create($data);
+        return redirect()->route('mantenimiento.index');
+
     }
 
     /**

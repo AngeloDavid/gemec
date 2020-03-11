@@ -113,8 +113,11 @@ class TypeEquController extends Controller
      * @param  \App\TypeEqu  $typeEqu
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TypeEqu $typeEqu)
+    public function destroy(TypeEqu $id)
     {
         //
+        $this->authorize('tecnico',$id);
+    $id->delete();
+    return redirect('/tecnico.index');
     }
 }
